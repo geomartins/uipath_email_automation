@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sending_Email" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="684,2052" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="+ Step1:  Add a folder called &quot;EmailTemplates&quot; to the root of your project&#xD;&#xA;&#xD;&#xA;+ Step 2: Inside the &quot;EmailTemplates&quot; folder, add &quot;information.txt &quot;file to it&#xD;&#xA;&#xD;&#xA;+ Step 3: Inside the &quot;information.txt&quot; file&#xD;&#xA;  &#xD;&#xA;     ++ &#xD;&#xA;     Dear Martins&#xD;&#xA;&#xD;&#xA;       An Unusual Activities has been detected at your domain at {0} in {1}&#xD;&#xA;&#xD;&#xA;        Adeola Smith&#xD;&#xA;        2021-12-31&#xD;&#xA;&#xD;&#xA;+ Step4:  Drag &amp; Drop &quot;Read Text File&quot; Activity into the sequence&#xD;&#xA;&#xD;&#xA;+ Step 5:  Inside the &quot;Read Text File&quot; Activity Property Panel, Navigate to&#xD;&#xA;&#xD;&#xA;    ++ File Section&#xD;&#xA;          FileName ---- &quot;EmailTemplates\\information.txt&quot;&#xD;&#xA;&#xD;&#xA;   ++ Output Section&#xD;&#xA;          Output to ----- {InformationTemplate}&#xD;&#xA;         &#xD;&#xA;&#xD;&#xA;+ Step 6:   Drag &amp; Drop &quot;Use Application/Browser&quot; Activity, Click on &quot;Indicate application to automate&quot;&#xD;&#xA;&#xD;&#xA;+ Step7:  Drag &amp; Drop &quot;Take Screenshot&quot; Actvities inside the &quot;Use Application/Browser&quot; Activity, Click on &quot;Indicaton in **&quot;&#xD;&#xA;&#xD;&#xA;+ Step 8:  Inside the &quot;Take Screenshot&quot; Activities Property Panel, Navigate to&#xD;&#xA;&#xD;&#xA;   ++ Input Section&#xD;&#xA;         FileName ------- &quot;screenshot2.png&quot;  (String)&#xD;&#xA;&#xD;&#xA;+ Step 5: Drag &amp; Drop &quot;Send SMTP Mail Message&quot;  Activity&#xD;&#xA;&#xD;&#xA;+ Step 10: Inside the &quot;Send SMTP Mail Message &quot; Activity Property Panel, Navige to&#xD;&#xA;&#xD;&#xA;    ++ Attachments Section&#xD;&#xA;          Attachments -------- &quot;screenshot.png&quot;&#xD;&#xA;&#xD;&#xA;    ++ Email Section&#xD;&#xA;           Body ---- String.Format(InformationTemplate, &quot;This Date&quot;, &quot;22hrs ago&quot;)&#xD;&#xA;           Subject --- &quot;Just Testing Email&quot;&#xD;&#xA;&#xD;&#xA;   ++ Host Section&#xD;&#xA;           Port ---- 587&#xD;&#xA;           Server --- &quot;smtp.gmail.com&quot;&#xD;&#xA;&#xD;&#xA;   ++ Logon Section&#xD;&#xA;           Email ---- &quot;martinsabiodun94@gmail.com&quot;&#xD;&#xA;           Password --- &quot;****&quot;&#xD;&#xA;&#xD;&#xA;    ++ Reciever Section&#xD;&#xA;           To ---- &quot;geopyrite@gmail.com&quot;&#xD;&#xA;&#xD;&#xA;     ++ Sender Section&#xD;&#xA;           Name ---- &quot;Martoliski&quot;&#xD;&#xA;        &#xD;&#xA;        &#xD;&#xA;&#xD;&#xA;           &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;     &#xD;&#xA;" DisplayName="Sending_Email" sap:VirtualizedContainerService.HintSize="476,1987" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="InformationTemplate" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadTextFile DisplayName="Read Text File" FileName="EmailTemplates\\information.txt" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <ui:ReadTextFile.Content>
+        <OutArgument x:TypeArguments="x:String">
+          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">InformationTemplate</mca:CSharpReference>
+        </OutArgument>
+      </ui:ReadTextFile.Content>
+    </ui:ReadTextFile>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: simplilearn microsoft botframework - Google Find" sap:VirtualizedContainerService.HintSize="434,541" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="5ddc4b79-7adb-4151-b53e-2cfd9b64c1aa" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTakeScreenshot DisplayName="Take Screenshot 'Videos13:18Microsoft Bot'" FileName="screenshot.png" FileNameMode="None" sap:VirtualizedContainerService.HintSize="334,231" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" ScopeIdentifier="5ddc4b79-7adb-4151-b53e-2cfd9b64c1aa" Version="V1">
+              <uix:NTakeScreenshot.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=simplilearn+microsoft+botframework&amp;rlz=1C1GCEU_enNG974NG974&amp;oq=simplilearn+microsoft+botframework&amp;aqs=chrome..69i57j69i64.31699j0j15&amp;sourceid=chrome&amp;ie=UTF-8" DesignTimeRectangle="188, -132, 652, 2067" FriendlyName="'Videos13:18Microsoft Bot'" FullSelectorArgument="&lt;webctrl id='rso' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='rso' tag='DIV' type='' aaname='' check:text='Videos13:18Microsoft Bot Framework - Enabling channels for a BotYouTube · Johnathan Lightfoot28 Fẹ' /&gt;" Guid="53b54048-73c2-4488-83a8-1c3d2e686982" InformativeScreenshot="fe289410aa3a654485e8dd994cc4415e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='simplilearn microsoft botframework - Google Find' /&gt;" SearchSteps="FuzzySelector" />
+              </uix:NTakeScreenshot.Target>
+            </uix:NTakeScreenshot>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1376, 744" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="ccdd7619b2da7e6b2f733d965cbad4e9.png" Selector="&lt;html app='chrome.exe' title='simplilearn microsoft botframework - Google Find'/&gt;" Url="https://www.google.com/search?q=simplilearn+microsoft+botframework&amp;rlz=1C1GCEU_enNG974NG974&amp;oq=simplilearn+microsoft+botframework&amp;aqs=chrome..69i57j69i64.31699j0j15&amp;sourceid=chrome&amp;ie=UTF-8" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send SMTP Mail Message" Email="martinsabiodun94@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Name="Martoliski" Password="martolala809" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Just testing email" To="geopyrite@gmail.com">
+      <ui:SendMail.Body>
+        <InArgument x:TypeArguments="x:String">
+          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">String.Format(InformationTemplate, "This Date", "22hrs ago")</mca:CSharpValue>
+        </InArgument>
+      </ui:SendMail.Body>
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+          <InArgument x:TypeArguments="x:String">
+            <Literal x:TypeArguments="x:String">screenshot.png</Literal>
+          </InArgument>
+        </scg:List>
+      </ui:SendMail.Files>
+    </ui:SendMail>
+  </Sequence>
+</Activity>
